@@ -1,10 +1,11 @@
 #--------------------------------------------------------------------------
 # 
-# Script Name: TallTale.rb
+# Script Name: TallTale_ExersiceE.rb
 # Version:     1.0
-# Author:      Jerry Lee Ford, Jr.
-# Date:        March 2010
-# 
+# Author:      Blaine Smith
+# Date:        April 2 2020
+# School: Bellevue University
+
 # Description: This Ruby script demonstrates how to collect and process 
 #              user input through the development of an interactive 
 #              storytelling game.
@@ -45,18 +46,22 @@ end
 
 Console_Screen = Screen.new  #Initialize a new Screen object
 
-#Execute the Screen object's cls method in order to clear the screen
-Console_Screen.cls
+loop do 
+  #Execute the Screen object's cls method in order to clear the screen
+  Console_Screen.cls
 
-#Prompt the player for permission to begin the game
-print "Would you like to hear an interesting story? (y/n)\n\n: "
+  #Prompt the player for permission to begin the game
+  print "Would you like to hear an interesting story? (y/n)\n\n: "
 
-answer = STDIN.gets  #Collect the player's response
-answer.chomp!  #Remove any extra characters appended to the string
+  $answer = STDIN.gets  #Collect the player's response
+  $answer.chomp!  #Remove any extra characters appended to the string
 
+  break if $answer == "y" || $answer == "n"
+
+end
 
 #Analyze the player's response
-if answer == "n"  #See if the player elected not to play
+if $answer == "n"  #See if the player elected not to play
 
   Console_Screen.cls  #Clear the display area
 

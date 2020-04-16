@@ -51,7 +51,7 @@ else
   puts "A zebra with a scratched knee! (Press Enter)"
   pause = STDIN.gets  
 
-  puts "What is black and white and red all over? (Press Enter)"
+  Puts "What is black and white and red all over? (Press Enter)"
   pause = STDIN.gets
 
   puts "A skunk with diaper rash! (Press Enter)"

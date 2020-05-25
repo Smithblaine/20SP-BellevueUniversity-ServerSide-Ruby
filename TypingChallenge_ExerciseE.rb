@@ -1,10 +1,10 @@
 #--------------------------------------------------------------------------
 # 
-# Script Name: TypingChallenge.rb
+# Script Name: TypingChallenge_ExerciseE.rb
 # Version:     1.0
-# Author:      Jerry Lee Ford, Jr.
-# Date:        March 2010
-# 
+# Author:      Blaine Smith
+# Date:        April 18, 2020
+# School:      Bellevue University
 # Description: This Ruby script demonstrates how to apply conditional logic 
 #              in order to analyze user input and control script execution 
 #              through the development of a computer typing test that
@@ -54,7 +54,7 @@ class Test
     puts "\t\t\tInstructions:\n\n"  #Display a heading
 
     #Display the game's instructions
-    puts %Q{    This test consists of a series of 5 typing challenges. 
+    puts %Q{    This test consists of a series of 10 typing challenges. 
     The challenge sentences are presented one at a time. To respond 
     correctly, you must retype each sentence exactly as shown and press 
     the Enter key. Your grade will be displayed at the end of the test.
@@ -79,14 +79,16 @@ class Test
       #Keep track of the number of correctly retyped challenge sentences
       $noRight += 1  
       Console_Screen.cls       #Clear the display area
-      #Keep the player informed
+      puts "Your challenge phrase was: \n" + challenge + "\n"#Keep the player informed
+      puts "\nUser entered: \n" + result + "\n"
       print "Correct!\n\nPress Enter to continue." 
       Console_Screen.pause       #Pause the game
       
     else  
     
       Console_Screen.cls       #Clear the display area
-      #Keep the player informed
+      puts "Your challenge phrase was: \n" + challenge + "\n"#Keep the player informed
+      puts "\nUser entered: \n" + result + "\n"
       print "Incorrect!\n\nPress Enter to continue."
       Console_Screen.pause       #Clear the game
       
@@ -100,18 +102,51 @@ class Test
     Console_Screen.cls       #Clear the display area  
   
     #To pass the test the player must correctly retype 3 sentences
-    if $noRight >= 3 then
+    # if $noRight >= 6 then
     
-      #Inform the player of the good news
-      print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
-      puts "You have passed the typing test!\n\nPress Enter to continue."
+    #   #Inform the player of the good news
+    #   print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+    #   puts "You have passed the typing test!\n\nPress Enter to continue."
       
-    else  #The player has failed the test
+    # else  #The player has failed the test
     
-      #Inform the player of the bad news
-      print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
-      puts "You have failed the typing test!\n\nPress Enter to continue."
+    #   #Inform the player of the bad news
+    #   print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+    #   puts "You have failed the typing test!\n\nPress Enter to continue."
       
+    # end
+
+    case $noRight
+      when 10 #A
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: A\n\nPress Enter to continue."
+      when 9 #A
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: A\n\nPress Enter to continue."
+      when 8 #B
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: B\n\nPress Enter to continue."
+      when 7 #C
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: C\n\nPress Enter to continue."
+      when 6 #D
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: D\n\nPress Enter to continue."
+      when 5
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: F\n\nPress Enter to continue."
+      when 4
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: F\n\nPress Enter to continue."
+      when 3
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: F\n\nPress Enter to continue."
+      when 2
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: F\n\nPress Enter to continue."
+      when 1
+        print "You retyped " + $noRight.to_s + " sentence(s) correctly. "
+        puts "Your final grade is: F\n\nPress Enter to continue."
     end
     
   end
@@ -175,6 +210,11 @@ else  #The player wants to take the test
   "that enough M&Ms cannot fix."
   Typing_Test.present_test "Perhaps today is a good day to die. Fight " +
   "beside me and let us die together."
+  Typing_Test.present_test "Todays History, Tomorrows a mystery."
+  Typing_Test.present_test "The coronavirus is causing mass country panic."
+  Typing_Test.present_test "Panda express is my favorite place to get food, reguardless of how I feel."
+  Typing_Test.present_test "I am the Dragon Warrior."
+  Typing_Test.present_test "This is the End. Or is it?"
 
   #Notify the player of the results by executing the Test object's 
   #display_instructions method
